@@ -28,7 +28,6 @@ const Main = () => {
         querySnapshot.forEach((doc) => {
           const data = doc.data();
           setOptionData(data.optionsArray);
-          console.log("Document data:", data.optionsArray);
           setShowDefault(true);
           setLoader(false);
         });
@@ -47,11 +46,12 @@ const Main = () => {
           terms,
           uuidv4()
         );
-        if (data.info) {
+        console.log(data)
+        if (data) {
           setNewData({
-            name: data.info.name,
-            selected: data.info.selected,
-            terms: data.info.terms,
+            name: data.name,
+            selected: data.selected,
+            terms: data.terms,
           });
           setShowDefault(false);
           setNotification({ success: true, msg: "Data added successfully" });
@@ -71,7 +71,7 @@ const Main = () => {
         }, 3000);
       }
     } else {
-      console.log("aefajajava");
+
       setNotification({ success: false, msg: "All feilds are mendetory *" });
       setShowError(true);
       setTimeout(() => {
@@ -84,7 +84,6 @@ const Main = () => {
   const handleOptionsData = () => {
     if (!loader && !showDefault) {
       return newData?.selected.map((item) => {
-        console.warn(newData?.selected);
         return <option value={item}>{item}</option>;
       });
     } else {
