@@ -46,12 +46,11 @@ const Main = () => {
           terms,
           uuidv4()
         );
-        console.log(data)
-        if (data) {
+        if (data.info) {
           setNewData({
-            name: data.name,
-            selected: data.selected,
-            terms: data.terms,
+            name: data.info.name,
+            selected: data.info.selected,
+            terms: data.info.terms,
           });
           setShowDefault(false);
           setNotification({ success: true, msg: "Data added successfully" });
