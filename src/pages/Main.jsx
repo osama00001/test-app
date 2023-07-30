@@ -109,7 +109,7 @@ const Main = () => {
           />
         </div>
         <div className="selector_wrapper">
-          <h1>Sactors</h1>
+          <h1>Sectors</h1>
           <select
             multiple
             size="5"
