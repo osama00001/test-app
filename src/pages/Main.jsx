@@ -139,7 +139,7 @@ const Main = () => {
           {!notification.success && showError && <p>{notification.msg}</p>}
           <button onClick={handleSubmit}>Save</button>
           <Link to="/details">
-            <button>Go to Details</button>
+            <button> Details</button>
           </Link>
         </div>
       </div>
