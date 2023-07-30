@@ -34,7 +34,7 @@ const AllData = () => {
 
   
     },[])
-  
+     console.log(userdetails.length)
       const DisplayData=userdetails.map((item)=>{
         return(
           <div className='cardlist_container'>
@@ -55,10 +55,9 @@ const AllData = () => {
     
   return (
     <div className='vr_feature_container'>
-       {!userdetails? <h1 style={{textAlign:'center',paddingTop:'30px'}}>All User Data Available</h1>: <h1 style={{textAlign:'center',paddingTop:'30px'}}>No Data Available</h1>}
+       {userdetails.length>0? <h1 style={{textAlign:'center',paddingTop:'30px'}}>All User Data Available</h1>: <h1 style={{textAlign:'center',paddingTop:'30px'}}>No Data Available</h1>}
       <div className='vr_features'>
      {userdetails&&DisplayData}
-     {!userdetails?<h1>No Data Available</h1>:''}
     </div>
     </div>
   )
